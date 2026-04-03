@@ -1,6 +1,5 @@
 ![logo](https://github.com/shahid2005a/Dgtlbot/blob/main/PythonBot.png)
 
-Host repo
 
 # 🚀 Python Bot Hosting Telegram Bot
 
