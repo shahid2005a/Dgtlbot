@@ -15,15 +15,33 @@ from collections import defaultdict
 
 # ============ BANNER FUNCTION ============
 def banner():
-    print("\033[1;31m")  # Red
-    print(r"""
-██████╗ ██╗   ██╗████████╗██╗  ██╗ ██████╗ ███╗   ██╗
-██╔══██╗╚██╗ ██╔╝╚══██╔══╝██║  ██║██╔═══██╗████╗  ██║
-██████╔╝ ╚████╔╝    ██║   ███████║██║   ██║██╔██╗ ██║
-██╔═══╝   ╚██╔╝     ██║   ██╔══██║██║   ██║██║╚██╗██║
-██║        ██║      ██║   ██║  ██║╚██████╔╝██║ ╚████║
-╚═╝        ╚═╝      ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-""")
+    # Mix of colors: Cyan, Yellow, Green, Purple, Blue
+    colors = ["\033[1;36m", "\033[1;33m", "\033[1;32m", "\033[1;35m", "\033[1;34m"]
+    
+    lines = [
+        "██████╗ ██╗   ██╗████████╗██╗  ██╗ ██████╗ ███╗   ██╗",
+        "██╔══██╗╚██╗ ██╔╝╚══██╔══╝██║  ██║██╔═══██╗████╗  ██║",
+        "██████╔╝ ╚████╔╝    ██║   ███████║██║   ██║██╔██╗ ██║",
+        "██╔═══╝   ╚██╔╝     ██║   ██╔══██║██║   ██║██║╚██╗██║",
+        "██║        ██║      ██║   ██║  ██║╚██████╔╝██║ ╚████║",
+        "╚═╝        ╚═╝      ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝",
+        "",
+        "🔴 YouTube: https://www.youtube.com/@aryanafridi00",
+        "🐙 GitHub:  https://github.com/shahid2005a"
+    ]
+    
+    for i, line in enumerate(lines):
+        if line and not line.startswith(("📺", "🐙")):
+            color = colors[i % len(colors)]
+            print(f"{color}{line}")
+        elif line.startswith("📺"):
+            print(f"\033[1;33m{line}\033[0m")
+        elif line.startswith("🐙"):
+            print(f"\033[1;34m{line}\033[0m")
+        else:
+            print(line)
+    
+    print("\033[0m")
 
     print("\033[1;32m        🐍 PYTHON BOT HOSTING 🐍")  # Green
     print("\033[1;36m        👨‍💻 Developed By : Aryan Afridi")  # Cyan
